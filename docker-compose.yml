@@ -15,5 +15,6 @@ services:
     container_name: mongo
     restart: always
     image: mongo
+    privileged: true
     volumes:
       - /data/db:/data/db
