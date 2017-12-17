@@ -1,0 +1,19 @@
+version: '2'
+services:
+  pritunl:
+    container_name: pritunl
+    restart: always
+    image: jippi/pritunl
+    privileged: true
+    environment:
+      - PRITUNL_MONGODB_URI=mongodb://mongo:27017/pritunl
+    ports:
+      - 80:80
+      - 443:443
+      - 1194:1194
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo
+    volumes:
+      - /data/db:/data/db
