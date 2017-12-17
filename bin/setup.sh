@@ -1,3 +1,4 @@
+yum install -y epel-release
 yum install -y docker docker-compose
 systemctl start docker
 systemctl enable docker
